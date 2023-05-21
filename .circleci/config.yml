@@ -135,7 +135,7 @@ commands:
       - run:
           name: Getting cocoapods dependencies
           command: |
-            pod deintegrate
+            pod deintegrate ios/Mattermost.xcodproj/*.pbxproj
             echo after pod deintegrate
             npm run pod-install
       - save_cache:
