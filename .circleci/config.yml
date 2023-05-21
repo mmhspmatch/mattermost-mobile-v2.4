@@ -136,8 +136,9 @@ commands:
           name: Getting cocoapods dependencies
           command: |
             cd ios/Mattermost.xcodeproj/
-            pod deintegrate
-            echo after pod deintegrate
+            ls
+            pod update Rudder
+            echo after pod update
             npm run pod-install
       - save_cache:
           name: Save cocoapods specs and pods cache
