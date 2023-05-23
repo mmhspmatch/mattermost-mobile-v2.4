@@ -194,6 +194,7 @@ commands:
             cd ios 
             ls
             chmod +x /Users/distiller/Library/Developer/Xcode/DerivedData/Mattermost-dccmuzsvuknucgaysqsdrmfmdbgw/Build/Intermediates.noindex/ArchiveIntermediates/Mattermost/IntermediateBuildFilesPath/Mattermost.build/Release-iphoneos/Mattermost.build/Script-00DD1BFF1BD5951E006B06BC.sh
+            chmod +x uploadDebugSymbols.sh
             chmod +x bundleReactNative.sh
             cd ..
             cd fastlane
