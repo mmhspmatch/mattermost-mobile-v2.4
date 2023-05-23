@@ -355,6 +355,19 @@ platform :ios do
     end
   end
 
+  desc "Generate new certificates"
+  lane :generate_new_certificates do
+    if !ENV['IOS_API_KEY_ID'].nil? && !ENV['IOS_API_KEY_ID'].empty?
+      api_key = get_apple_api_key()
+      match(
+          api_key: api_key,
+          type: ENV['MATCH_TYPE'] || 'adhoc',
+          app_identifier: ['de.othregensburg.mattermost', 'de.othregensburg.mattermost.NotificationService', 'de.othregensburg.mattermost.MattermostShare'],
+          readonly: false
+      )
+    end
+  end
+  
   desc 'Get iOS match profiles'
   lane :certs do
     if !ENV['IOS_API_KEY_ID'].nil? && !ENV['IOS_API_KEY_ID'].empty?
