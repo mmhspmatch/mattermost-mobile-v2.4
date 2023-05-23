@@ -21,7 +21,7 @@ executors:
   ios:
     parameters:
       resource_class:
-        default: medium
+        default: macos.x86.medium.gen2
         type: string
     environment:
       NODE_OPTIONS: --max_old_space_size=12000
@@ -134,12 +134,7 @@ commands:
           command: npm run ios-gems
       - run:
           name: Getting cocoapods dependencies
-          command: |
-            cd ios/Mattermost.xcodeproj/
-            ls
-            pod update Rudder
-            echo after pod update
-            npm run pod-install
+          command: npm run pod-install
       - save_cache:
           name: Save cocoapods specs and pods cache
           key: v1-cocoapods-{{ checksum "ios/Podfile.lock" }}-{{ arch }}
