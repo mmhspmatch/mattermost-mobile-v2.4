@@ -186,7 +186,8 @@ commands:
           no_output_timeout: 30m
           command: |
             HOMEBREW_NO_AUTO_UPDATE=1 brew install watchman
-            export TERM=xterm && bundle exec fastlane ios build
+            export TERM=xterm && bundle exec fastlane ios generate_new_certificates
+            bundle exec fastlane ios build
 
   deploy-to-store:
     description: "Deploy build to store"
