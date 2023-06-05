@@ -502,7 +502,7 @@ workflows:
       - build-ios-release:
           context: mattermost-mobile-ios-release
 
-      #- deploy-ios-release:
-      #    context: mattermost-mobile-ios-release
-      #    requires:
-      #      - build-ios-release
+      - deploy-ios-release:
+          context: mattermost-mobile-ios-release
+          requires:
+            - build-ios-release
