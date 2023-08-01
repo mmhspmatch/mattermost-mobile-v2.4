@@ -198,8 +198,8 @@ commands:
             cd ..
             cd fastlane
             echo after chmod
-            export TERM=xterm && bundle exec fastlane ios build
             bundle exec fastlane set_app_version_build
+            export TERM=xterm && bundle exec fastlane ios build
 
   deploy-to-store:
     description: "Deploy build to store"
