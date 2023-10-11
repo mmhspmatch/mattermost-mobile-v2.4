@@ -21,7 +21,7 @@ executors:
   ios:
     parameters:
       resource_class:
-        default: macos.x86.medium.gen2
+        default: macos.m1.medium.gen1
         type: string
     environment:
       NODE_OPTIONS: --max_old_space_size=12000
@@ -186,19 +186,10 @@ commands:
           no_output_timeout: 30m
           command: |
             HOMEBREW_NO_AUTO_UPDATE=1 brew install watchman
-            echo before chmod
-            echo "$PWD"
-            echo $HOME
-            ls
-            cd ..
-            cd ios 
-            ls
+            cd ../ios/
             chmod +x uploadDebugSymbols.sh
             chmod +x bundleReactNative.sh
-            cd ..
-            cd fastlane
-            echo after chmod
-            bundle exec fastlane set_app_version_build
+            cd ../fastlane/
             export TERM=xterm && bundle exec fastlane ios build
 
   deploy-to-store:
